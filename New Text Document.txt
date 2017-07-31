@@ -1,0 +1,43 @@
+>>npm init
+
+>>Webpack install
+	-npm i webpack -S
+
+>>Create a webpack.config.js file
+
+var webpack = require('webpack');
+var path = require('path');
+
+var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
+var APP_DIR = path.resolve(__dirname, 'src/client/app');
+
+var config = {
+  entry: APP_DIR + '/index.jsx',
+  output: {
+    path: BUILD_DIR,
+    filename: 'bundle.js'
+  }
+};
+
+module.exports = config;
+
+>>Create the folders according to the APP_DIR and BUILD_DIR
+
+>>Install Bebel
+	-npm install --save-dev babel-loader babel-core babel-preset-env webpack
+
+>>Install React
+
+	-npm i react react-dom -S
+
+>>WebPack Dev Server
+	-npm install webpack-dev-server --save-dev
+	-node_modules/.bin/webpack-dev-server
+
+devServer: {
+     contentBase: './build',
+   },
+
+>>Redux
+	-npm install --save react-redux
+
